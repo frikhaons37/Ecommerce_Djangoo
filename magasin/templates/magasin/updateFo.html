@@ -1,0 +1,86 @@
+{% extends 'magasin/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h1>Edit Fournisseur</h1>
+    <form action="{% url 'updateFo' fournisseurs.id %}" method="PUT">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Edit fournisseur</button>
+    </form>
+    <style >
+        h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: hsl(353, 100%, 78%);
+      text-align: center;
+      margin-top: 2rem;
+      text-transform: uppercase;
+
+      margin-bottom: 1rem;
+    }
+    
+   
+    
+    form {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+      border: 1px solid #d05d5d;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-family: system-ui;
+
+    }
+    
+    label {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333333d2;
+      margin-bottom: 0.5rem;
+      font-family: system-ui;
+      text-transform: uppercase;
+    }
+   input[type="text"],
+   input[type="email"],
+   input[type="number"],
+   select {
+     width: 100%;
+     padding: 0.5rem;
+     font-size: 1.2rem;
+     border-radius: 4px;
+     border: 1px solid #ddd;
+     margin-bottom: 1rem;
+   }
+
+   textarea {
+     width: 100%;
+     padding: 0.5rem;
+     font-size: 1.2rem;
+     border-radius: 4px;
+     border: 1px solid #ddd;
+     margin-bottom: 1rem;
+     font-family: system-ui;
+   }
+
+   button[type="submit"] {
+     display: block;
+     width: 100%;
+     padding: 0.5rem;
+     font-size: 1.2rem;
+     font-weight: bold;
+     color: #fff;
+     background-color: hsl(353, 100%, 78%);
+     border-radius: 4px;
+     border: none;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+   }
+
+   button[type="submit"]:hover {
+     background-color: hsl(353, 97%, 70%);
+   }
+   </style>
+{% endblock %}

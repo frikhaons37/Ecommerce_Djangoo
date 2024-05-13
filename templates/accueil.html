@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications</title>
+    <link rel="stylesheet" href="{% static 'css/styleAccueil.css' %}" class="css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="wrapper">
+        <h1>APPLICATIONS</h1>
+        <p>Bienvenue ! Choisissez l'application que vous désirez. Nous sommes là pour votre satisfaction</p>
+             <div class="content-box">
+                <div class="card">
+                    <i class='bx bx-store' style='font-size: 50px;'></i>
+                    <h2 ><a href="/magasin/Home" style="text-decoration: none;color: black;">Application n°1 : Magasin</a></h2>
+                    <p>Bienvenue,Ici vous pouvez gérer les produits,les fournisseurs et les commandes </p>
+
+                </div>
+                <div class="card">
+                    <i class="bx bx-laptop bx-md" ></i>
+                    <h2><a href="{% url 'deconnexion' %}"  style="text-decoration: none;color: black;">Application n°2: Client</a></h2>
+
+                
+                                       <p>Cette application est destinée pour les clients. Ils peuvent consulter les produits,ajouter au panier les produits à acheter et payer en ligne</p>
+                </div>
+                <div class="card">
+                    <i class='bx bx-user bx-md'></i>
+
+                    <h2>Application n°3</h2>
+                <p>Iure ad fuga, voluptas nisi odit blanditiis aut culpa quasi. Expedita deleniti molestias hic
+                    numquam delectus!</p>
+                         
+                </div>
+                <div class="card">
+                    <i class="bx bx-mail-send bx-md"></i>
+                    <h2>Application n°4</h2>
+                    <p> Iure ad fuga, voluptas nisi odit blanditiis aut culpa quasi. Expedita deleniti molestias hic
+                        numquam delectus!</p>
+                         
+                </div>
+                <div class="card">
+                    <i class="bx bx-bar-chart-alt bx-md" style='font-size: 80px;'></i>
+                    <h2>Application n°5</h2>
+                    <p> Iure ad fuga, voluptas nisi odit blanditiis aut culpa quasi. Expedita deleniti molestias hic
+                        numquam delectus!</p>
+                         
+                </div>
+                <div class="card">
+                    <i class="bx bx-paint bx-md" style='font-size: 80px;'></i>
+                    <h2>Application n°6</h2>
+                    <p> Iure ad fuga, voluptas nisi odit blanditiis aut culpa quasi. Expedita deleniti molestias hic
+                        numquam delectus!</p>
+                         
+                </div>
+             </div>
+    </div>
+</body>
+</html>

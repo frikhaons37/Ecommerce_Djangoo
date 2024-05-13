@@ -1,0 +1,26 @@
+<form method="GET" action="{% url 'ListFournisseur' %}">
+    
+</form>
+<h2 class="banner-subtitle " style="text-align: center;"> LISTE DES FOURNISSEURS</h2>
+<table  style="font-family: Poppins, sans-serif;">
+    <thead class="thead-dark">
+        <tr>
+            <th><center>Name</center></th>
+            <th><center>Email Adress</center></th>
+            <th><center>Phone Number</center></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for fournisseur in fournisseurs %}
+            <tr>
+                <td><center>{{ fournisseur.nom }}</center></td>
+                <td> <center>{{ fournisseur.email }}</center></td>
+                <td><center>{{ fournisseur.telephone }}</center></td>
+                <td>
+                   
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

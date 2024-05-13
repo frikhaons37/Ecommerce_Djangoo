@@ -1,0 +1,108 @@
+{% extends 'magasin/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="header-search-container">
+
+  <form method="GET" action="{% url 'index' %}">
+    <div class="header-search-container">
+        <input type="search" name="q" class="search-field" placeholder="Enter your product name...">
+        <button type="submit" class="search-btn">
+            <ion-icon name="search-outline"></ion-icon>
+        </button>
+    </div>
+</form>
+
+</div>
+  <h2 class="banner-subtitle "> LISTE DES PRODUITS</h2>
+
+  <div class="product-grid">
+    {% for product in list %}
+      <div class="showcase">
+        <div class="showcase-banner">
+          <img src="{{ product.img.url }}" alt="{{ product.libelle }}" width="300" class="product-img default">
+          <img src="{{ product.imgH.url }}" alt="{{ product.libelle }}" width="300" class="product-img hover">
+
+          <div class="showcase-actions">
+            <button class="btn-action">
+              <ion-icon name="heart-outline"></ion-icon>
+            </button>
+            <button class="btn-action">
+              <ion-icon name="eye-outline"></ion-icon>
+            </button>
+            <button class="btn-action">
+              <ion-icon name="repeat-outline"></ion-icon>
+            </button>
+            <button class="btn-action">
+              <ion-icon name="bag-add-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+        <div class="showcase-content">
+          <a href="#" class="showcase-category">{{ product.categorie }}</a>
+          <a href="#">
+            <h3 class="showcase-title">{{ product.libelle }}</h3>
+          </a>
+          <div class="price-box">
+            <p class="price">{{ product.prix }}$</p>
+          </div>
+          
+          <div style="display: flex; margin-bottom: 10px;">
+            <a href="{% url 'deleteP' product.id %}" class="delete-form" style="text-decoration: none;">
+              <button type="button" class="btn-newsletter ">Delete</button>
+            </a>
+            <a href="{% url 'edit_produit' product.id %}" class="btn-newsletter" style="text-decoration: none; color: white;">Modifier</a>
+   
+        </div>
+      </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <style>
+.btn-group {
+  display: flex;
+  align-items: center;
+}
+.btn-newsletter {
+    background: var(--eerie-black);
+    color: var(--white);
+    font-size: var(--fs-7);
+    font-weight: var(--weight-600);
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-radius: var(--border-radius-sm);
+    margin: auto;
+    transition: var(--transition-timing);
+  }
+  
+  .btn-newsletter:hover { background: var(--salmon-pink);      }
+.btn {
+  
+  margin-right: 10px;
+}
+
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: hsl(353, 100%, 78%);
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-family: Poppins, sans-serif;
+    }
+    
+    .btn-group {
+      margin-bottom: 10px;
+    }
+    .banner-subtitle {
+    color: var(--salmon-pink);
+    font-size: var(--fs-7);
+    font-weight: var(--weight-500);
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+   
+  </style>
+{% endblock %}

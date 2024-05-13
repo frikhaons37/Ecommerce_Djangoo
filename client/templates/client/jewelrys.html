@@ -1,0 +1,228 @@
+{% extends 'client/base.html' %}
+{% load static %}
+
+{% block content %}
+<h2 class="banner-subtitle " style="text-align: center; margin-bottom: 50px"> LISTE DES PRODUITS CATEGORY JEWELRY</h2>
+
+<!--
+          - SIDEBAR
+        -->
+        <div class="product-container">
+
+            <div class="container">
+              <div class="sidebar has-scrollbar" data-mobile-menu>
+                <div class="sidebar-category">
+                  <div class="sidebar-top">
+                    <h2 class="sidebar-title">Category</h2>
+                    <button class="sidebar-close-btn" data-mobile-menu-close-btn>
+                      <ion-icon name="close-outline"></ion-icon>
+                    </button>
+                  </div>
+                  <ul class="sidebar-menu-category-list">
+                    <li class="sidebar-menu-category">
+                      <button class="sidebar-accordion-menu" data-accordion-btn>
+                        <div class="menu-title-flex">
+                          <img src="{% static 'dress.svg' %}" alt="clothes" width="20" height="20" class="menu-title-img">
+                          
+                          <a href="{% url 'clothess' %}" style="text-decoration: none;">
+                          <p class="menu-title">Clothes</p></a>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="sidebar-menu-category">
+                      <button class="sidebar-accordion-menu" data-accordion-btn>
+                        <div class="menu-title-flex">
+                          <img src="{% static 'shoes.svg' %}" alt="footwear" class="menu-title-img" width="20" height="20">
+                          <a href="{% url 'footwears' %}" style="text-decoration: none;">
+
+                          <p class="menu-title">Footwear</p></a>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="sidebar-menu-category">
+                      <button class="sidebar-accordion-menu" data-accordion-btn>
+                        <div class="menu-title-flex">
+                          <img src="{% static 'jewelry.svg' %}" alt="clothes" class="menu-title-img" width="20" height="20">
+                          <a href="{% url 'jewelrys' %}" style="text-decoration: none;">
+
+                          <p class="menu-title">Jewelry</p></a>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="sidebar-menu-category">
+                      <button class="sidebar-accordion-menu" data-accordion-btn>
+                        <div class="menu-title-flex">
+                          <img src="{% static 'perfume.svg' %}" alt="perfume" class="menu-title-img" width="20" height="20">
+                          <a href="{% url 'perfumes' %}" style="text-decoration: none;">
+
+                          <p class="menu-title">Perfume</p></a>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="sidebar-menu-category">
+                      <button class="sidebar-accordion-menu" data-accordion-btn>
+                        <div class="menu-title-flex">
+                          <img src="{% static 'cosmetics.svg' %}" alt="cosmetics" class="menu-title-img" width="20" height="20">
+                          <a href="{% url 'cosmeticss' %}" style="text-decoration: none;">
+
+                          <p class="menu-title">Cosmetics</p></a>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="sidebar-menu-category">
+                      <button class="sidebar-accordion-menu" data-accordion-btn>
+                        <div class="menu-title-flex">
+                          <img src="{% static 'glasses.svg' %}" alt="glasses" class="menu-title-img" width="20" height="20">
+                          <a href="{% url 'glassess' %}" style="text-decoration: none;">
+
+                          <p class="menu-title">Glasses</p></a>
+                        </div>
+                      </button>
+                    </li>
+                    <li class="sidebar-menu-category">
+                      <button class="sidebar-accordion-menu" data-accordion-btn>
+                        <div class="menu-title-flex">
+                          <img src="{% static 'bag.svg' %}" alt="bags" class="menu-title-img" width="20" height="20">
+                          <a href="{% url 'bagss' %}" style="text-decoration: none;">
+                          <p class="menu-title">Bags</p></a>
+                        </div>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="product-showcase">
+                  <h3 class="showcase-heading">best sellers</h3>
+                  <div class="showcase-wrapper">
+                    <div class="showcase-container">
+                      <div class="showcase">
+                        <a href="#" class="showcase-img-box">
+                          <img src="{% static '1.jpg' %}" alt="baby fabric shoes" width="75" height="75" class="showcase-img">
+                        </a>
+                        <div class="showcase-content">
+                          <a href="#">
+                            <h4 class="showcase-title">baby fabric shoes</h4>
+                          </a>
+                          <div class="showcase-rating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                          </div>
+                          <div class="price-box">
+                            <del>$5.00</del>
+                            <p class="price">$4.00</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="showcase">
+                        <a href="#" class="showcase-img-box">
+                          <img src="{% static '2.jpg' %}" alt="men's hoodies t-shirt" class="showcase-img" width="75" height="75">
+                        </a>
+                        <div class="showcase-content">
+                          <a href="#">
+                            <h4 class="showcase-title">men's hoodies t-shirt</h4>
+                          </a>
+                          <div class="showcase-rating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star-half-outline"></ion-icon>
+                          </div>
+                          <div class="price-box">
+                            <del>$17.00</del>
+                            <p class="price">$7.00</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="showcase">
+                        <a href="#" class="showcase-img-box">
+                          <img src="{% static '3.jpg' %}" alt="girls t-shirt" class="showcase-img" width="75" height="75">
+                        </a>
+                        <div class="showcase-content">
+                          <a href="#">
+                            <h4 class="showcase-title">girls t-shirt</h4>
+                          </a>
+                          <div class="showcase-rating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star-half-outline"></ion-icon>
+                          </div>
+                          <div class="price-box">
+                            <del>$5.00</del>
+                            <p class="price">$3.00</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="showcase">
+                        <a href="#" class="showcase-img-box">
+                          <img src="{% static '4.jpg' %}" alt="woolen hat for men" class="showcase-img" width="75" height="75">
+                        </a>
+                        <div class="showcase-content">
+                          <a href="#">
+                            <h4 class="showcase-title">woolen hat for men</h4>
+                          </a>
+                          <div class="showcase-rating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                          </div>
+                          <div class="price-box">
+                            <del>$15.00</del>
+                            <p class="price">$12.00</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+ <!--
+          - Liste des produits
+        -->
+        <div class="product-minimal">
+            {% for product in produits %}
+            <a href="" style="text-decoration: none;">
+                <div class="product-showcase">
+                    <h2 class="title">{{ product.libelle}}</h2>
+                    <div class="showcase-wrapper has-scrollbar">
+                        <div class="showcase-container">
+                            <div class="showcase">
+                                <a href="{% url 'product_details' product_id=product.id %}" class="showcase-img-box">
+                                    <img src='/media/{{ product.img }}' alt="{{ product.libelle }}" width="70" class="showcase-img">
+                                </a>
+                                <div class="showcase-content">
+                                    <a href="{% url 'product_details' product_id=product.id %}">
+                                        <h4 class="showcase-title">{{ product.libelle }}</h4>
+                                    </a>
+                                    <a href="{% url 'product_details' product_id=product.id %}" class="showcase-category">{{ product.categorie }}</a>
+                                    <div class="price-box">
+                                        <p class="price">${{ product.prix }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        
+    </div>
+    </div>
+    
+<style>  .banner-subtitle {
+    color: var(--salmon-pink);
+    font-size: var(--fs-7);
+    font-weight: var(--weight-500);
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }</style>
+  {% endblock %}

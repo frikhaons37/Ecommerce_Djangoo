@@ -1,0 +1,141 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Anon</title>
+        <link rel="stylesheet" href="{% static 'css/style-prefix.css' %}" >
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.1/css/ionicons.min.css" class="css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <!-- Google Font link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+              rel="stylesheet">
+        <!-- Bootstrap
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+
+    </head>
+<body style="background-color: white;">
+<header>
+    <nav class="desktop-navigation-menu">
+        <div class="container">
+            <ul class="desktop-menu-category-list">
+                <li class="menu-category">
+                    <a class="menu-title" href="{% url 'home' %}" style="text-decoration: none;">Home </a>
+                </li>
+                <li class="menu-category">
+                  <li class="menu-category">
+                    <a href="" class="menu-title" style="text-decoration: none;">Categories</a>
+        
+                    <div class="dropdown-panel" style="left: -600px;">
+        
+                      <ul class="dropdown-panel-list">
+        
+                        <li class="panel-list-item">
+                          <a href="{% url 'clothes' %}">Clothes</a>
+                      </li>
+        
+                        <li class="panel-list-item">
+                          <a href="{% url 'footwear' %}">Footwear</a>
+                                              </li>
+        
+                        <li class="panel-list-item">
+                          <a href="{% url 'jewelry' %}">Jewerly</a>
+                        </li>
+        
+                        <li class="panel-list-item">
+                          <a href="{% url 'perfume' %}">Perfume</a>
+                        </li>
+        
+                        <li class="panel-list-item">
+                          <a href="{% url 'cosmetics' %}">Cosmetics</a>
+                        </li>
+        
+                        <li class="panel-list-item">
+                          <a href="{% url 'glasses' %}">Glasses</a>
+                        </li>
+                        <li class="panel-list-item">
+                          <a href="{% url 'bags' %}">Bags</a>
+                        </li>
+                         
+                      </ul>
+               
+                <li class="menu-category">
+                    <a class="menu-title" href="{% url 'index' %}"style="text-decoration: none;">Products </a>
+                </li>
+                <li class="menu-category">
+                    <a class="menu-title" href="{% url 'ajout' %}"style="text-decoration: none;">Add product </a>
+                </li>
+                <li class="menu-category">
+                    <a class="menu-title" href="{% url 'AjoutFournisseur' %}"style="text-decoration: none;">Add fournisseur </a>
+                </li>
+                <li class="menu-category">
+                    <a class="menu-title" href="{% url 'ListFournisseur' %}"style="text-decoration: none;">List fournisseur </a>
+                </li>
+                <li class="menu-category">
+                    <a class="menu-title" href="{% url 'AjoutCommande' %}"style="text-decoration: none;">Add Commande </a>
+                </li>
+                <li class="menu-category">
+                    <a class="menu-title" href="{% url 'ListCommande' %}"style="text-decoration: none;">List commande </a>
+                </li>
+                <!--Connexion-->
+                <ul class="dropdown-panel-list">
+                  {% if user.is_authenticated %}
+                  <li class="panel-list-item">
+                    <a href="#">{{user}}</a>
+                </li>
+                <li class="panel-list-item">
+                  <a href="{% url 'accueil' %}">Déconnexion</a>
+                </li>
+              {% else %}
+              <li class="panel-list-item">
+                <a href="{% url 'login' %}">Connexion</a>
+            </li>
+            <li class="panel-list-item">
+              <a href="{% url 'register' %}">Inscription</a>
+          </li>
+          {% endif %}
+                </ul>
+
+
+              <!------------------------>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<div class="container">
+    {% block content %} {% endblock content%}
+</div>
+<footer>
+    <div class="footer-bottom">
+
+        <div class="container">
+  
+          <img src="{% static 'payment.png' %}" alt="payment method" class="payment-img">
+  
+          <p class="copyright">
+            Copyright &copy; <a href="#">Anon</a> all rights reserved.
+          </p>
+  
+        </div>
+  
+      </div>
+  
+</footer>
+<!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
